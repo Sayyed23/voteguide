@@ -1,6 +1,6 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { RegistrationForm } from "@/components/RegistrationForm";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { RegistrationForm } from "@/components/forms/RegistrationForm";
 import Link from "next/link";
 
 export default function ApplyPage() {

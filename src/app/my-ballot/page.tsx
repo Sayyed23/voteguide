@@ -1,5 +1,6 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import Link from "next/link";
 
 // Mock Data
 const ballotMeasures = [
@@ -27,9 +28,9 @@ export default function MyBallotPage() {
             <h3 className="font-bold text-lg mb-1">Showing ballot for:</h3>
             <p className="text-gray-400 text-sm">District 4, 123 Main St, Civic Center</p>
           </div>
-          <button className="px-6 py-2 border border-brand-teal text-brand-teal rounded-full font-bold text-sm hover:bg-brand-teal hover:text-brand-dark transition-colors">
+          <Link href="/registration/apply" className="px-6 py-2 border border-brand-teal text-brand-teal rounded-full font-bold text-sm hover:bg-brand-teal hover:text-brand-dark transition-colors">
             Update Address
-          </button>
+          </Link>
         </div>
 
         {/* Ballot Sections */}
@@ -73,9 +74,9 @@ export default function MyBallotPage() {
             
             <div className="bg-white/5 border border-white/5 rounded-2xl p-6">
               <p className="text-sm text-gray-400 mb-4">You haven't saved any candidate choices yet.</p>
-              <button className="w-full py-3 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-sm transition-colors text-white">
+              <Link href="/candidates" className="block w-full py-3 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-sm transition-colors text-white text-center">
                 Browse Candidates
-              </button>
+              </Link>
             </div>
             
             <div className="bg-brand-teal/10 border border-brand-teal/20 rounded-2xl p-6 mt-6">

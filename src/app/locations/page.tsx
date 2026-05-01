@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useCallback } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import Link from "next/link";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 const mapContainerStyle = {
@@ -86,6 +87,16 @@ export default function LocationsPage() {
                 <p className="text-gray-400 text-sm">{loc.address}</p>
               </div>
             ))}
+          </div>
+
+          {/* Cross-links */}
+          <div className="mt-8 space-y-3">
+            <Link href="/registration" className="flex items-center justify-between p-4 bg-brand-teal/5 border border-brand-teal/20 rounded-xl hover:bg-brand-teal/10 transition-colors group">
+              <span className="text-sm font-semibold text-gray-300 group-hover:text-brand-teal transition-colors">Not registered yet? Start here →</span>
+            </Link>
+            <Link href="/my-ballot" className="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-xl hover:border-brand-teal/30 transition-colors group">
+              <span className="text-sm font-semibold text-gray-400 group-hover:text-brand-teal transition-colors">Review your personalized ballot →</span>
+            </Link>
           </div>
         </div>
 

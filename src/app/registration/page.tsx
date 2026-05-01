@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
 
 export default function RegistrationPage() {
@@ -26,9 +26,9 @@ export default function RegistrationPage() {
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Not sure if you're registered? Have you moved recently? Verify your current voter registration status through the official portal.
             </p>
-            <button className="text-brand-teal font-bold uppercase tracking-wider text-xs flex items-center gap-2 group-hover:gap-3 transition-all">
+            <Link href="/stage/verification" className="text-brand-teal font-bold uppercase tracking-wider text-xs flex items-center gap-2 group-hover:gap-3 transition-all">
               Verify Status <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </button>
+            </Link>
           </div>
 
           <div className="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-teal/50 transition-colors group bg-gradient-to-br from-white/5 to-brand-teal/5">

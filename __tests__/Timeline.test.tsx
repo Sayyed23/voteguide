@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import { Timeline } from '@/components/Timeline'
+import { Timeline } from '@/components/ui/Timeline'
 
 describe('Timeline Component', () => {
   it('renders without crashing', () => {

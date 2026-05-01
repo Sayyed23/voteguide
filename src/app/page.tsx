@@ -1,11 +1,11 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Timeline } from "@/components/Timeline";
-import { StageContent } from "@/components/StageContent";
-import { Sidebar } from "@/components/Sidebar";
-import { Checklist } from "@/components/Checklist";
-import { FAQ } from "@/components/FAQ";
-import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/ui/Hero";
+import { Timeline } from "@/components/ui/Timeline";
+import { StageContent } from "@/components/layout/StageContent";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { Checklist } from "@/components/ui/Checklist";
+import { FAQ } from "@/components/ui/FAQ";
+import { Footer } from "@/components/layout/Footer";
 import { stagesData } from "@/data/timelineData";
 
 export default function Home() {

@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { FAQ } from '@/components/FAQ'
+import { FAQ } from '@/components/ui/FAQ'
 
 const mockFaqs = [
   { question: 'What is voting?', answer: 'Voting is a democratic right.' },
