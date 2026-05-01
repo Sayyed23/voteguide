@@ -7,9 +7,15 @@ import { Checklist } from "@/components/Checklist";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { stagesData } from "@/data/timelineData";
+import { notFound } from "next/navigation";
 
-export default function Home() {
-  const stageData = stagesData[1]; // Registration stage
+export default function StagePage({ params }: { params: { slug: string } }) {
+  const stageData = stagesData.find(s => s.slug === params.slug);
+
+  if (!stageData) {
+    notFound();
+  }
+
   return (
     <main className="min-h-screen flex flex-col bg-brand-dark overflow-x-hidden">
       <Navbar />
@@ -26,8 +32,14 @@ export default function Home() {
         </div>
       </section>
       
-      <Checklist items={stageData.checklist} />
-      <FAQ faqs={stageData.faqs} />
+      {stageData.checklist && stageData.checklist.length > 0 && (
+        <Checklist items={stageData.checklist} />
+      )}
+      
+      {stageData.faqs && stageData.faqs.length > 0 && (
+        <FAQ faqs={stageData.faqs} />
+      )}
+      
       <Footer />
     </main>
   );
