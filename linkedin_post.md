@@ -59,7 +59,7 @@ Just deployed my newest full-stack project: **VoteGuide**! 💻🗳️
 I wanted to build an application that solves a real-world problem—voter education—while getting hands-on with the latest frontend tools. 
 
 VoteGuide is an interactive civic-tech application that guides users through the 7 stages of the election lifecycle. 
-
+    
 **What I used:**
 🔹 **Next.js 16** for the robust App Router and performance
 🔹 **React 19** for modern component architecture
