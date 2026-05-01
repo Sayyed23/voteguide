@@ -1,9 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VoteGuide 🗳️
 
-## Getting Started
+VoteGuide is a comprehensive, interactive web application designed to guide citizens through the entire electoral process. From checking eligibility to understanding how votes are counted, VoteGuide breaks down the complexities of voting into a simple, step-by-step timeline.
 
-First, run the development server:
+## 🌟 Features
 
+- **Interactive Timeline**: A dynamic 7-stage timeline covering the entire election lifecycle.
+- **Stage-Specific Content**: Detailed information, FAQs, and actionable steps for each phase of the election process.
+- **Interactive Checklists**: Keep track of your progress with built-in to-do lists for requirements like ID verification and registration.
+- **Modern UI/UX**: Built with Next.js 16, React 19, and Tailwind CSS 4 for a fast, responsive, and beautiful experience.
+- **Premium Design**: A sleek, dark-themed design for optimal readability and modern appeal.
+
+## 🗺️ The 7 Stages of Voting
+
+1. **Eligibility**: Understand the fundamental requirements to participate (Age, Citizenship, Residency).
+2. **Registration**: How, where, and when to register to vote.
+3. **Verification**: Checking your voter status and finding your polling place.
+4. **Voting Methods**: Exploring your options: early voting, mail-in, absentee, or in-person.
+5. **Election Day**: What to expect at the polls, required IDs, and your rights as a voter.
+6. **Counting**: Insight into the meticulous process of how votes are processed and tallied.
+7. **Results**: Understanding certification, canvassing, and official election outcomes.
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language**: TypeScript
+
+## 🛠️ Getting Started
+
+First, install the dependencies:
+```bash
+npm install
+```
+
+Then, run the development server:
 ```bash
 npm run dev
 # or
@@ -16,21 +47,9 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/app`: Next.js app router pages and layouts.
+- `/components`: Reusable React components (Navbar, Hero, Timeline, FAQ, etc.).
+- `/data`: Static data files, including the 7-stage election timeline data.
+- `/public`: Static assets.
