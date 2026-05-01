@@ -26,7 +26,7 @@ export default function Home() {
         </div>
       </section>
       
-      <Checklist items={stageData.checklist} />
+      <Checklist items={stageData.checklist} stageId={stageData.id} />
       <FAQ faqs={stageData.faqs} />
       <Footer />
     </main>

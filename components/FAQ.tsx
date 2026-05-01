@@ -25,6 +25,8 @@ export const FAQ = ({ faqs }: FAQProps) => {
             <button 
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+              aria-expanded={openIndex === index}
+              aria-controls={`faq-answer-${index}`}
             >
               <span className="font-bold text-lg">{faq.question}</span>
               <svg 
@@ -32,11 +34,17 @@ export const FAQ = ({ faqs }: FAQProps) => {
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-40 opacity-100 p-6 pt-0' : 'max-h-0 opacity-0 pb-0'}`}>
+            <div 
+              id={`faq-answer-${index}`}
+              role="region"
+              aria-labelledby={`faq-question-${index}`}
+              className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-40 opacity-100 p-6 pt-0' : 'max-h-0 opacity-0 pb-0'}`}
+            >
               <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
             </div>
           </div>

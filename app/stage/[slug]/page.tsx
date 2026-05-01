@@ -33,7 +33,7 @@ export default function StagePage({ params }: { params: { slug: string } }) {
       </section>
       
       {stageData.checklist && stageData.checklist.length > 0 && (
-        <Checklist items={stageData.checklist} />
+        <Checklist items={stageData.checklist} stageId={stageData.id} />
       )}
       
       {stageData.faqs && stageData.faqs.length > 0 && (
