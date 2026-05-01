@@ -11,11 +11,15 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
+import type { FirebaseApp } from "firebase/app";
+import type { Auth } from "firebase/auth";
+import type { Firestore } from "firebase/firestore";
+
 // Initialize Firebase only if it hasn't been initialized already (important for Next.js)
 // and only if we have the config (to prevent build errors if env vars are missing)
-let app: any = null;
-let auth: any = null;
-let db: any = null;
+let app: FirebaseApp | null = null;
+let auth: Auth | null = null;
+let db: Firestore | null = null;
 
 if (firebaseConfig.apiKey) {
   app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);

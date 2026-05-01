@@ -5,7 +5,19 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export async function POST(req: Request) {
   try {
-    const { message } = await req.json();
+    const body = await req.json();
+    const { message } = body;
+
+    // Input Validation
+    if (!message || typeof message !== 'string') {
+      return Response.json({ error: "Invalid message format." }, { status: 400 });
+    }
+
+    if (message.length > 500) {
+      return Response.json({ error: "Message too long. Please keep it under 500 characters." }, { status: 400 });
+    }
+
+    const sanitizedMessage = message.trim();
 
     // The Gemini 1.5 model is versatile and works well for most text tasks
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
