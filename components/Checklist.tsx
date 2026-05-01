@@ -23,6 +23,10 @@ export const Checklist = ({ items, stageId }: ChecklistProps) => {
 
   // Auth Listener
   useEffect(() => {
+    if (!auth) {
+      setLoading(false);
+      return;
+    }
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (!currentUser) {
@@ -39,7 +43,7 @@ export const Checklist = ({ items, stageId }: ChecklistProps) => {
   // Fetch data from Firestore when user logs in
   useEffect(() => {
     async function fetchChecklist() {
-      if (user) {
+      if (user && db) {
         try {
           const docRef = doc(db, 'users', user.uid, 'checklists', `stage_${stageId}`);
           const docSnap = await getDoc(docRef);
@@ -70,7 +74,7 @@ export const Checklist = ({ items, stageId }: ChecklistProps) => {
     
     setCheckedItems(newState);
 
-    if (user) {
+    if (user && db) {
       try {
         const docRef = doc(db, 'users', user.uid, 'checklists', `stage_${stageId}`);
         await setDoc(docRef, { items: newState }, { merge: true });
@@ -81,6 +85,10 @@ export const Checklist = ({ items, stageId }: ChecklistProps) => {
   };
 
   const handleSignIn = async () => {
+    if (!auth) {
+      console.error("Auth is not initialized");
+      return;
+    }
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
