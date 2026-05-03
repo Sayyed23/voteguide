@@ -2,8 +2,13 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { StageContent } from '@/components/layout/StageContent'
 
-const mockStageData = {
+import { StageData } from '@/data/timelineData'
+
+const mockStageData: StageData = {
+  id: 1,
   slug: 'eligibility',
+  label: 'Eligibility',
+  icon: 'M12 2L2 7l10 5 10-5-10-5z',
   stagePrefix: 'STAGE 01',
   title: 'Voter Eligibility',
   description: 'Before you can register, you must meet the fundamental requirements.',
@@ -12,7 +17,14 @@ const mockStageData = {
     { num: '02', title: 'Citizenship', desc: 'You must be a citizen.' },
     { num: '03', title: 'Residency', desc: 'You must have established residency.' },
   ],
+  checklist: [
+    { id: 101, label: 'Test Checklist', checked: false }
+  ],
+  faqs: [
+    { question: 'Test FAQ?', answer: 'Test Answer.' }
+  ]
 }
+
 
 describe('StageContent Component', () => {
   it('renders the stage prefix', () => {
