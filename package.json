@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "jest"
+    "lint:fix": "eslint --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@react-google-maps/api": "^2.20.8",
     "firebase": "^12.12.1",
-    "next": "16.2.4",
+    "next": "^16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

@@ -1,4 +1,80 @@
-export const stagesData = [
+/**
+ * @fileoverview Static data for the 7-stage election timeline.
+ * Each stage represents a phase in the democratic election lifecycle,
+ * from eligibility verification through to official results certification.
+ *
+ * This data drives the Timeline component, Stage detail pages, Checklists,
+ * and FAQ sections throughout the application.
+ */
+
+/**
+ * Represents a single process step within a stage.
+ */
+export interface StageStep {
+  /** Step number label (e.g., '01', '02', '03') */
+  num: string;
+  /** Short title for the step */
+  title: string;
+  /** Detailed description of the step */
+  desc: string;
+}
+
+/**
+ * Represents a single checklist item for voter preparation.
+ */
+export interface ChecklistItem {
+  /** Unique numeric ID for the checklist item */
+  id: number;
+  /** Display label for the checklist item */
+  label: string;
+  /** Default checked state */
+  checked: boolean;
+}
+
+/**
+ * Represents a single FAQ entry.
+ */
+export interface FAQItem {
+  /** The question text */
+  question: string;
+  /** The answer text */
+  answer: string;
+}
+
+/**
+ * Complete data shape for a single election stage.
+ */
+export interface StageData {
+  /** Unique numeric ID (1-7) */
+  id: number;
+  /** URL-friendly slug for routing */
+  slug: string;
+  /** Short label for navigation UI */
+  label: string;
+  /** SVG path data for the stage icon */
+  icon: string;
+  /** Formatted stage prefix (e.g., 'STAGE 01') */
+  stagePrefix: string;
+  /** Full title of the stage */
+  title: string;
+  /** Detailed description of the stage */
+  description: string;
+  /** Three-step process breakdown */
+  steps: StageStep[];
+  /** Preparation checklist items */
+  checklist: ChecklistItem[];
+  /** Frequently asked questions */
+  faqs: FAQItem[];
+}
+
+/**
+ * Complete dataset for the 7 stages of the election lifecycle.
+ *
+ * Stage order follows the natural flow of the democratic process:
+ * 1. Eligibility → 2. Registration → 3. Verification →
+ * 4. Voting Methods → 5. Election Day → 6. Counting → 7. Results
+ */
+export const stagesData: StageData[] = [
   {
     id: 1,
     slug: 'eligibility',
